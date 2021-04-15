@@ -19,6 +19,9 @@ public class BasePage {
         driver = BaseTest.getDriver();
 
     }
+    public void getURL(String urlString) {
+        driver.get(urlString);
+    }
 
 
     public void waitForVisibilityOfElement(WebElement element, int time) {
@@ -36,17 +39,15 @@ public class BasePage {
         return element.getText();
     }
 
-    public void getURL(String urlString) {
-        driver.get(urlString);
-    }
 
-   public void clickOnVisibleElement(WebElement element) {
-        waitForVisibilityOfElement(element, 100);
-         element.click();
+
+    public void clickOnVisibleElement(WebElement element) {
+        waitForVisibilityOfElement(element, 10);
+        element.click();
     }
 
     public void sendKeys(WebElement element, String string) {
-        waitForVisibilityOfElement(element, 100);
+        waitForVisibilityOfElement(element, 10);
         element.sendKeys(string);
     }
 
@@ -83,7 +84,8 @@ public class BasePage {
 
     }
 
-    public void waitForVisibilityOfElement(By locator, int time) {
+
+   /* public void waitForVisibilityOfElement(By locator, int time) {
         try {
             WebDriverWait wait = new WebDriverWait(driver, time);
             wait.until(visibilityOf(driver.findElement(locator)));
@@ -111,7 +113,7 @@ public class BasePage {
         } catch (NoSuchElementException e) {
             return false;
 
-        }
+        }*/
     }
-}
+
 

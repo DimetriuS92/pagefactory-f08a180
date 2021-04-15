@@ -20,28 +20,25 @@ public class MainPage extends BasePage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-    @FindBy (css = "#nav-logo")
+
+    @FindBy(css = "#nav-logo")
     private WebElement element;
     String urlString = "https://www.amazon.com/";
-    @FindBy (css = "#nav-search-submit-text")
+    @FindBy(css = "#nav-search-submit-text")
     private WebElement SearchButton;
-    @FindBy (css = "#twotabsearchtextbox")
+    @FindBy(css = "#twotabsearchtextbox")
     private WebElement SearchField;
 
-    @FindBy (xpath = "//span[@class=\"a-offscreen\"]")
-    private java.util.List<WebElement> sumprices;
+    @FindBy(xpath = "//span[@class=\"a-offscreen\"]")
+    private List<WebElement> sumprices;
 
-    public MainPage getPage(){
-        getURL(urlString);
-        return this;
-    }
-    public void clickOnVisibleElement(WebElement searchField) {
-    }
 
-    private void clickSearchField() {
+    /*public void clickOnVisibleElement(WebElement searchField) {
+    }*/
+
+   /* private void clickSearchField() {
         clickOnVisibleElement(SearchField);
-    }
-
+    }*/
 
 
     private void typeSearchField(String query) {
@@ -54,6 +51,7 @@ public class MainPage extends BasePage {
         clickOnVisibleElement(SearchButton);
 
     }
+
     public void startSearch(String query) {
         /*clickSearchField();*/
         typeSearchField(query);
@@ -69,12 +67,12 @@ public class MainPage extends BasePage {
         showPrices(getPrices(), limit);
     }*/
 
-    public void PricesSum(double limit){
+    public void PricesSum(double limit) {
         double sum = 0;
-        for (WebElement Price: sumprices) {
+        for (WebElement Price : sumprices) {
             String priceCase = Price.getAttribute("innerHTML").replaceAll("[$A-Za-z]", "");
             double priceLower20 = Double.parseDouble(priceCase);
-            if (priceLower20>limit){
+            if (priceLower20 > limit) {
                 sum = sum + priceLower20;
             }
         }
@@ -83,27 +81,15 @@ public class MainPage extends BasePage {
         } else
             System.out.println("Price sum " + sum + " $");
     }
-    public ArrayList<Double> getPrices() {
-        return getPricesList(sumprices);
-    }
-
-
     public void showPrices() {
         showPrices(getPrices());
     }
-    /*public void startSearch(String query) {
-        clickSearchField();
-        typeSearchField(query);
-        clickSearchButton();
 
-    }*/
+    public ArrayList<Double> getPrices() {
+        return getPricesList(sumprices);
     }
+}
 
-   /*private void searchLowPrices(double limit, String search) {
-        this.typeSearchField(SearchData.SEARCH_DATA.getSearchdata());
-        this.clickSearchButton();
-        this.sumOfPricesLower(20.00);
 
-    }*/
 
 
