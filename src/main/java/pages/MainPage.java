@@ -29,7 +29,9 @@ public class MainPage extends BasePage {
     @FindBy(css = "#twotabsearchtextbox")
     private WebElement SearchField;
 
-    @FindBy(xpath = "//span[@class=\"a-offscreen\"]")
+   @FindBy(xpath = "//span[@class=\"a-offscreen\"]")
+   /* @FindBy(xpath = "//*[@class='a-price']")*/
+    /*@FindBy(xpath = "//*[@class='a-price']/*[@class='a-offscreen']")*/
     private List<WebElement> sumprices;
 
 
@@ -58,7 +60,13 @@ public class MainPage extends BasePage {
         clickSearchButton();
 
     }
+    public void showPrices() {
+        showPrices(getPrices());
+    }
 
+    public ArrayList<Double> getPrices() {
+        return getPricesList(sumprices);
+    }
 
 
 
@@ -81,13 +89,7 @@ public class MainPage extends BasePage {
         } else
             System.out.println("Price sum " + sum + " $");
     }
-    public void showPrices() {
-        showPrices(getPrices());
-    }
 
-    public ArrayList<Double> getPrices() {
-        return getPricesList(sumprices);
-    }
 }
 
 

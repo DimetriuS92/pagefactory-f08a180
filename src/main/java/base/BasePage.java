@@ -60,7 +60,7 @@ public class BasePage {
     public ArrayList<Double> getPricesList(List<WebElement> list) {
         ArrayList<Double> prices = new ArrayList();
         for (WebElement e : list) {
-            String s = e.toString().replaceAll("[^0-9]", "");
+            String s = e.getAttribute("innerHTML").replaceAll("[$A-Za-z]", "");
             double i = Double.parseDouble(s);
             prices.add(i);
         }
