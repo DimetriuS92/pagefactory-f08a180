@@ -68,7 +68,7 @@ public class BasePage {
     }
 
 
-    public void showPricesSum(List<Double> list, double limit) {
+    public void showPricesSum(ArrayList<Double> list, double limit) {
         double sum = 0;
         for (double i : list) {
             if (i > limit) {

@@ -71,16 +71,16 @@ public class MainPage extends BasePage {
 
 
 
-   /* public void showPrices(ArrayList<Double> prices, double limit) {
-        showPrices(getPrices(), limit);
-    }*/
+    public void showPrices(ArrayList<Double> prices, double limit) {
+        showPrices(getPricesList(sumprices), limit);
+    }
 
     public void PricesSum(double limit) {
         double sum = 0;
         for (WebElement Price : sumprices) {
             String priceCase = Price.getAttribute("innerHTML").replaceAll("[$A-Za-z]", "");
             double priceLower20 = Double.parseDouble(priceCase);
-            if (priceLower20 > limit) {
+            if (priceLower20 < limit) {
                 sum = sum + priceLower20;
             }
         }
