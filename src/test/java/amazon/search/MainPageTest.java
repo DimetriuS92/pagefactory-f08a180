@@ -1,3 +1,5 @@
+package amazon.search;
+
 import base.BasePage;
 import base.BaseTest;
 import org.testng.annotations.Test;
