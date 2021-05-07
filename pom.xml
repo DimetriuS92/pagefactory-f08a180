@@ -122,7 +122,7 @@
                     <configuration>
                         <suiteXmlFiles>
                             &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;
-                            <suiteXmlFile>testng.xml</suiteXmlFile>
+                            <suiteXmlFile></suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
