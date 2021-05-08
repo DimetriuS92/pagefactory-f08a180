@@ -71,7 +71,7 @@
                             <configuration>
                                 <suiteXmlFiles>
                                     <!--suppress UnresolvedMavenProperty -->
-                                    <suiteXmlFile>testng1.xml</suiteXmlFile>
+                                    <suiteXmlFile>src/main/resources/suits/testng1.xml</suiteXmlFile>
                                 </suiteXmlFiles>
                             </configuration>
                         </plugin>
@@ -97,7 +97,7 @@
                             <configuration>
                                 <suiteXmlFiles>
                                     <!--suppress UnresolvedMavenProperty -->
-                                    <suiteXmlFile>testng2.xml</suiteXmlFile>
+                                    <suiteXmlFile>src/main/resources/suits/testng2.xml</suiteXmlFile>
                                 </suiteXmlFiles>
                             </configuration>
                         </plugin>
@@ -106,7 +106,7 @@
             </build>
         </profile>
     </profiles>
-    <!--<build>
+   <!--<build>
 
         <pluginManagement>
             <plugins>
@@ -121,8 +121,7 @@
                     <version>3.0.0-M5</version>
                     <configuration>
                         <suiteXmlFiles>
-                            &lt;!&ndash;suppress UnresolvedMavenProperty &ndash;&gt;
-                            <suiteXmlFile></suiteXmlFile>
+                            <suiteXmlFile>testng1</suiteXmlFile>
                         </suiteXmlFiles>
                     </configuration>
                 </plugin>
